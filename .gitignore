@@ -1,0 +1,17 @@
+.idea
+/.idea/workspace.xml
+/.idea/libraries
+/promo
+/key
+/app/key
+/captures
+*.apk
+*.jks
+*.keystore
+*.iml
+.gradle
+.idea
+.DS_Store
+build
+local.properties
+signing.properties

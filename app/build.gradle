@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId 'com.samebits.beacon.locator'
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 122
+        versionName '1.2.2'
+        testApplicationId 'com.samebits.beacon.locator.test'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    if (new File("signing.properties").exists()) {
+        Properties signingProperties = new Properties()
+        signingProperties.load(new FileInputStream(new File('signing.properties')))
+
+        signingConfigs {
+            release {
+                storeFile new File(signingProperties['storeFile'])
+                storePassword signingProperties['storePassword']
+                keyAlias signingProperties['keyAlias']
+                keyPassword signingProperties['keyPassword']
+            }
+        }
+
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+    productFlavors {
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    final SUPPORT_LIBRARY_VERSION = '28.0.0'
+    final DAGGER_VERSION = '2.11'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api 'org.altbeacon:android-beacon-library:2.16.1'
+    implementation "com.android.support:support-v4:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-v13:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:preference-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:cardview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:recyclerview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-annotations:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.google.dagger:dagger:$DAGGER_VERSION"
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'com.jakewharton:butterknife:9.0.0-rc3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc3'
+    implementation 'com.kevalpatel2106:ringtonepicker:1.3'
+
+}

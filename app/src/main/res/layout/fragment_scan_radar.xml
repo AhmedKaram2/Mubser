@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light_grey">
+
+    <include android:id="@+id/appbar" layout="@layout/app_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.samebits.beacon.locator.ui.view.RadarScanView
+            android:id="@+id/radar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:padding="6dp"
+            android:layout_marginTop="6dip" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dip"
+            android:textSize="@dimen/text_body"
+            android:padding="16dp"
+            android:gravity="center|bottom"
+            android:textAlignment="center"
+            />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
