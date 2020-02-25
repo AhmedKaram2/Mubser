@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.samebits.beacon.locator.ui.activity.MainNavigationActivity">
+    tools:context="com.samebits.beacon.mubser.ui.activity.MainNavigationActivity">
 
     <item
         android:id="@+id/action_add"

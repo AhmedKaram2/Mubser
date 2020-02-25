@@ -9,7 +9,7 @@
     <include android:id="@+id/appbar" layout="@layout/app_bar"/>
 
 
-        <com.samebits.beacon.locator.ui.view.ContextMenuRecyclerView
+        <com.samebits.beacon.mubser.ui.view.ContextMenuRecyclerView
             android:id="@+id/recycler_beacons"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

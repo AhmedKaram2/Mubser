@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.samebits.beacon.locator.ui.view.RadarScanView
+        <com.samebits.beacon.mubser.ui.view.RadarScanView
             android:id="@+id/radar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

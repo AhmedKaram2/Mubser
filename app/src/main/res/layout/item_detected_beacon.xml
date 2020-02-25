@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.samebits.beacon.locator.viewModel.DetectedBeaconViewModel" />
+            type="com.samebits.beacon.mubser.viewModel.DetectedBeaconViewModel" />
     </data>
 
     <FrameLayout
