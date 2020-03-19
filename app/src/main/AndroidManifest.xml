@@ -11,10 +11,9 @@
     <uses-permission android:name="net.dinglisch.android.tasker.PERMISSION_RUN_TASKS"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
-    <uses-feature
-        android:name="android.hardware.bluetooth_le"
-        android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 
     <application
         android:name="com.samebits.beacon.mubser.BeaconLocatorApp"
@@ -47,7 +46,4 @@
             <meta-data android:name="longScanForcingEnabled" android:value="true"/>
         </service>
     </application>
-
-
-
 </manifest>

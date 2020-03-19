@@ -41,25 +41,7 @@ public class WhiteListUtils {
     }
 
 
-//    private static void showAlertWindow(final Context context, final Intent intent) {
-//
-//        Pair<AlertDialog, Boolean> result = DialogBuilder.createDoNotAskDialog(
-//                context,
-//                "user_warn_protected_app",
-//                context.getString(R.string.action_settings),
-//                context.getString(R.string.message_need_autostartt_settings),
-//                R.string.action_settings,
-//                new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        context.startActivity(intent);
-//                        //settings.edit().putBoolean(SKIP_WHITELIST_APP, true).apply();
-//                    }
-//                });
-//        if (result.second) {
-//            result.first.show();
-//        }
-//
-//    }
+
 
     private static boolean isCallable(Context context, Intent intent) {
         List<ResolveInfo> list = context.getPackageManager().queryIntentActivities(intent,

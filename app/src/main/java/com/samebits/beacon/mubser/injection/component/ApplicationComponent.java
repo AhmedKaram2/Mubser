@@ -28,10 +28,6 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
-
-/**
- * Created by vitas on 18/10/15.
- */
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {

@@ -1,6 +1,5 @@
 package com.samebits.beacon.mubser.util;
 
-
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;

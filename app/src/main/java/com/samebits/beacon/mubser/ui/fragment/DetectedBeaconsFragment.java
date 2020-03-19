@@ -1,25 +1,10 @@
-/*
- *
- *  Copyright (c) 2015 SameBits UG. All rights reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *        http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
 
 package com.samebits.beacon.mubser.ui.fragment;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.speech.SpeechRecognizer;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -51,10 +36,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
-/**
- * Created by vitas on 9/11/15.
- */
 public class DetectedBeaconsFragment extends ScanFragment implements BeaconAdapter.OnBeaconLongClickListener {
 
     //40 sec timeout for scanning
@@ -72,6 +53,10 @@ public class DetectedBeaconsFragment extends ScanFragment implements BeaconAdapt
     private DetectedBeaconAdapter mBeaconsAdapter;
     private Beacon beacon1 ;
     private Beacon beacon2 ;
+
+    private static final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
+    private TextToSpeech tts;
+    private SpeechRecognizer speechRecog;
 
     public static DetectedBeaconsFragment newInstance() {
         return new DetectedBeaconsFragment();
@@ -193,7 +178,6 @@ public class DetectedBeaconsFragment extends ScanFragment implements BeaconAdapt
 
     @Override
     public void updateBeaconList(final Collection<Beacon> beacons) {
-
         // Here We Can Access The signal of Beacons in the Area
         List<Beacon> beaconList = new ArrayList<>(beacons);
 
